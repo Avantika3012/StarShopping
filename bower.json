@@ -1,0 +1,30 @@
+{
+  "name": "mean",
+  "description": "Front end library installer",
+  "main": "app.js",
+  "authors": [
+    "Pankaj Kumar Dewangan"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "angular",
+    "express",
+    "mongodb"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "jQuery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
