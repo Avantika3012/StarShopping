@@ -6,17 +6,17 @@ This is shopping cart web application for an online shopping store using MEAN St
 
 After cloning the repository we need to install the dependencies by below commands:
 
-1. npm install
+	1. npm install
 
 and then
 
-2. bower install
+	2. bower install
 
 then start the server by
 
-3. mongoDB needs to install and run on local machine 
+	3. mongoDB needs to install and run on local machine 
 
-4. node server.js
+	4. node server.js
 
 Then hit below url
 
