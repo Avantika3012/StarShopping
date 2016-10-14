@@ -10,7 +10,9 @@ app.controller('LoginController', ['$scope','$location','LoginService', function
     LoginService.login($scope.user).then(function (response) {
       if ($scope.UserRole.role === 'Admin') {
         $location.path('/adminHomeList')
-      }      
+      } else {
+        $location.path('/customerHome')
+      }     
     })
   }
 

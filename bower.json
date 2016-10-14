@@ -25,6 +25,8 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "jQuery": "^3.1.1",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "angular-local-storage": "^0.5.2"
   }
 }

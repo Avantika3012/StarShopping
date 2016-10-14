@@ -1,0 +1,28 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-3 menu">
+            <ul>
+                <li ng-repeat="product in products">
+                    <h3 ng-bind="product.productName"> </h3>
+                    Description: <br>
+                    <span class="description" ng-bind="product.description"></span>
+                    <div class="price" ng-if="product.discount == 0"> {{product.price}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
+                    <div class="price" ng-if="product.discount != 0">
+                        <del>{{product.price}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
+
+                    <div ng-if="product.discount > 0" class="discount"> {{product.discount}} % OFF</div>
+                    <div class="price" ng-if="product.discount != 0"> {{product.price - (product.price * product.discount) / 100}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
+
+                    <div class="buy-button" ng-click="buy(product)"> <i class="glyphicon glyphicon-ok" style="font-size:15px"> </i> BUY </div>
+                    <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

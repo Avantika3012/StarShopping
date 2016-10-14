@@ -1,3 +1,57 @@
+/*Divsion blocks for customer*/
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    float: left;
+    width:25%;
+    height: 100%;
+    padding: 17px;
+    margin: 17px;
+    background-color :#33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #0099cc;
+}
+
+/*Buy Button*/
+.buy-button {
+    cursor: pointer;
+    background-color:black;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    height: 34px;
+    padding: 10px;
+}
+
+.cart-button {
+    margin-top: 4px;
+}
+
+/*Price  Button*/
+.price {
+        margin: 12px;
+        text-align: center;
+        font-size: 30px;      
+}
+
+.discount {
+        margin: 5px;
+        text-align: center;
+        font-size: 22px;      
+}
+
+.description {
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+
 .navbar-dark .navbar-nav > li > a:hover, .navbar-dark .navbar-nav > li > a:focus {
     background-color: deepskyblue;
 }
