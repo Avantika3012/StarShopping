@@ -8,7 +8,12 @@ var getProducts = function (data, callback) {
   ProductDAO.getProducts(data, callback)
 }
 
+var deleteProduct = function (data, callback) {
+  ProductDAO.deleteProduct(data, callback)
+}
+
 module.exports = {
   saveProduct: saveProduct,
-  getProducts: getProducts
+  getProducts: getProducts,
+  deleteProduct: deleteProduct
 }

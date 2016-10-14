@@ -1,8 +1,9 @@
-app.controller('CustomerHomeController', ['$scope', 'AdminService', function ($scope, AdminService) {
-  // $scope.product = {}
-  // $scope.saveProduct = function () {
-  //   AdminService.saveProduct($scope.product).then(function (response) {
-  //     console.log(response);
-  //   })
-  // }
+app.controller('AdminProductController', ['$scope', 'AdminService', 'toastr', function ($scope, AdminService, toastr) {
+  $scope.product = {}
+  $scope.saveProduct = function () {
+    AdminService.saveProduct($scope.product).then(function (response) {  
+      toastr.success('Product Added Successfully!');
+      $scope.product = {}
+    })
+  }
 }])

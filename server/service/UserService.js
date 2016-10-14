@@ -8,7 +8,7 @@ var login = function (data, callback) {
   UserDAO.login(data, function (err, data) {
     if (err) callback(err)
     if (data.length) 
-        callback(null, true)
+        callback(null, data[0])
     else
         callback(null, false)
   })

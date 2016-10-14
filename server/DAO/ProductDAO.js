@@ -7,8 +7,15 @@ var saveProduct = function (data, callback) {
   })
 }
 
-var getProducts = function (data, callback) {  
+var getProducts = function (data, callback) {
   ProductModel.find(data, function (err, products) {
+    if (err) return callback(err)
+    callback(null, products)
+  })
+}
+
+var deleteProduct = function (data, callback) {
+  ProductModel.findByIdAndRemove(data, function (err, products) {
     if (err) return callback(err)
     callback(null, products)
   })
@@ -16,5 +23,6 @@ var getProducts = function (data, callback) {
 
 module.exports = {
   saveProduct: saveProduct,
-  getProducts: getProducts
+  getProducts: getProducts,
+  deleteProduct: deleteProduct
 }

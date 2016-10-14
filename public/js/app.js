@@ -11,7 +11,11 @@ var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule', 'toastr']
       })
       .when('/adminNewProduct', {
         templateUrl: 'html/adminNewProductForm.html',
-        controller: 'AdminProductController'
+        controller: 'AdminProductController',
+        resolve: {
+          product: function (DataService) {
+            return DataService.getProduct()
+        }}
       })
       .when('/customerHome', {
         templateUrl: 'html/customerHome.html',

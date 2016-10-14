@@ -3,7 +3,8 @@ app.factory('LoginService', [ '$http', function ($http) {
   loginService.login = function (user) {
     return $http.post('/user/login' , {
       username: user.username,
-      password: user.password
+      password: user.password,
+      role: user.role
     })
   }
   loginService.register = function (user) {

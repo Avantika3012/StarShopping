@@ -16,8 +16,13 @@ app.controller('LoginController', [
     }
     $scope.login = function (loginForm) {
       LoginService.login($scope.user).then(function (response) {
+        if (response.data === false) {
+          return toastr.error('Your credentials are Invalid', 'Error')          
+        }
         localStorageService.set('User', response.data)
-        if ($scope.UserRole.role === 'Admin') {
+        toastr.success('Logged-in successfully!')
+        $scope.$parent.loginSuccessed()
+        if ($scope.user.role === 'Admin') {
           $location.path('/adminHomeList')
         } else {
           $location.path('/customerHome')
@@ -27,7 +32,9 @@ app.controller('LoginController', [
 
     $scope.register = function (loginForm) {
       LoginService.register($scope.user).then(function (response) {
-        $location.path('/')
+        $scope.user = {role: $scope.user.role}
+        toastr.success('Please Login', 'User Registered')
+        $scope.SelectedForm.type = 'Login'
       })
     }
   }])

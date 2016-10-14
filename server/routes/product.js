@@ -7,7 +7,7 @@ router.post('/save', function (req, res, next) {
     if (err) {
       return res.send('ERROR : ' + err)
     }
-    res.send(response);
+    res.send(response)
   })
 })
 
@@ -16,7 +16,16 @@ router.post('/getProducts', function (req, res, next) {
     if (err) {
       return res.send('ERROR : ' + err)
     }
-    res.send(products);
+    res.send(products)
+  })
+})
+
+router.post('/deleteProduct', function (req, res, next) {
+  ProductService.deleteProduct(req.body, function (err, products) {
+    if (err) {
+      return res.send('ERROR : ' + err)
+    }
+    res.send('Product Deleted Successfully!')
   })
 })
 
