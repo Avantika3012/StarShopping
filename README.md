@@ -12,9 +12,11 @@ and then
 
 2. bower install
 
-then start the server by 
+then start the server by
 
-3. node server.js
+3. mongoDB needs to install and run on local machine 
+
+4. node server.js
 
 Then hit below url
 
