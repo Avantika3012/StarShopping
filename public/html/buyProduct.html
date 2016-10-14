@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-3 menu">
             <ul>
-                <li ng-repeat="product in products">
+                <li>
                     <h3 ng-bind="product.productName"> </h3>
                     Description: <br>
                     <span class="description" ng-bind="product.description"></span>
@@ -17,11 +17,27 @@
 
                     <div ng-if="product.discount > 0" class="discount"> {{product.discount}} % OFF</div>
                     <div class="price" ng-if="product.discount != 0"> {{product.price - (product.price * product.discount) / 100}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
-
                     <div> Available Quantity : {{product.quantity}}</div>
+                    <div> By : XYZ</div>
+                    
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="col-3 menu">
+            <ul>
+                <li>
+                    <h3> Order Summary </h3>
+                    <div>Enter Quantity: <input ng-model="product.enteredQuantity"  placeholder="Quantity" class="form-control input-md" required="" type="number"></div> <br>
+                    Item price : <span ng-if="product.discount > 0">{{product.price - (product.price * product.discount) / 100}}</span>
+                    <span ng-if="product.discount == 0">{{product.price}}</span>
+                    
+                    Total Price : {{product.enteredQuantity * }}
 
                     <div class="buy-button" ng-click="buy(product)"> <i class="glyphicon glyphicon-ok" style="font-size:15px"> </i> BUY </div>
-                    <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div>
+                    <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div> 
+                    
                 </li>
 
             </ul>

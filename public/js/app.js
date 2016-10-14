@@ -1,4 +1,4 @@
-var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule'])
+var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule', 'toastr'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -16,10 +16,15 @@ var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule'])
       .when('/customerHome', {
         templateUrl: 'html/customerHome.html',
         controller: 'CustomerHomeController'
-      })    
+      })
       .when('/buyProduct', {
         templateUrl: 'html/buyProduct.html',
-        controller: 'BuyProductController'
+        controller: 'BuyProductController',
+        resolve: {
+          product: function (DataService) {
+            return DataService.getProduct()
+        }}
+
       })
       .when('/home', {
         templateUrl: 'html/home.html',

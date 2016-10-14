@@ -18,7 +18,11 @@
     <!--Angular Libraries-->
     <script src="/libs/angular/angular.min.js"></script>
     <script src="/libs/angular-route/angular-route.min.js"></script>
-    <script src="/libs/angular-local-storage/dist/angular-local-storage.min.js"></script>    
+    <script src="/libs/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+    <!--Toaster Libs    -->
+    <link rel="stylesheet" type="text/css" href="/libs/angular-toastr/dist/angular-toastr.css" />
+    <script type="text/javascript" src="/libs/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
     <!--Angular files-->
     <script src="js/app.js"></script>
@@ -28,36 +32,38 @@
     <script src="js/controllers/LoginController.js"></script>
     <script src="js/controllers/AdminProductListController.js"></script>
     <script src="js/controllers/AdminProductController.js"></script>
-    <script src="js/controllers/CustomerHomeController.js"></script>    
+    <script src="js/controllers/CustomerHomeController.js"></script>
+    <script src="js/controllers/BuyProductController.js"></script>
 
     <!--Services-->
     <script src="js/services/LoginService.js"></script>
     <script src="js/services/AdminService.js"></script>
     <script src="js/services/CustomerService.js"></script>
+    <script src="js/services/DataService.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <nav class="navbar navbar-dark bg-primary">
-    
+
     <div class="container-fluid">
-        <div class="navbar-header">            
+        <div class="navbar-header">
             <a class="navbar-brand" href="" style="color:white">STAR Shopping</a>
         </div>
-        <ul class="nav navbar-nav">            
-            <li class="dropdown">
+        <ul class="nav navbar-nav">
+            <li class="dropdown" ng-if="loggedIn && getUserRole()">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" style="color:white"><b>Product</b>
         <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#/adminNewProduct" >Add New Product</a></li>
-                    <li><a href="#/adminHomeList">Product List</a></li>                    
+                    <li><a href="#/adminNewProduct">Add New Product</a></li>
+                    <li><a href="#/adminHomeList">Product List</a></li>
                 </ul>
             </li>
             <!--<li><a href="">Page 2</a></li>
             <li><a href="">Page 3</a></li>-->
         </ul>
         <div class="nav navbar-nav navbar-right">
-               <i class="navbar-brand glyphicon glyphicon-shopping-cart" style="font-size:15px"></i>
-               <a href="" class="navbar-brand" ng-click="logout()"><strong style="color:white"><span class="glyphicon glyphicon-off"></strong></a>
+            <i class="navbar-brand glyphicon glyphicon-shopping-cart" style="font-size:15px"></i>
+            <a href="" class="navbar-brand" ng-click="logout()"><strong style="color:white"><span class="glyphicon glyphicon-off"></strong></a>
         </div>
     </div>
 </nav>

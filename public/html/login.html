@@ -19,11 +19,11 @@
                             <li><input type="text" ng-model="user.password" required class="input" placeholder="Password" /><span class="icon"><i class="fa fa-lock"></i></span></li>
                              <li>
                                 <label>
-                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = false" value="Customer">
+                                    <input type="radio" ng-model="user.role" ng-change="adminSelected = false" value="Customer">
                                     Customer
                                 </label>
                                 <label>
-                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = true" value="Admin">
+                                    <input type="radio" ng-model="user.role" ng-change="adminSelected = true" value="Admin">
                                     Admin
                                 </label>
                             </li>                            
@@ -43,11 +43,11 @@
                             <!--<li><input type="checkbox" id="check1"> <label for="check1">I accept terms and conditions</label></li>-->
                             <li>
                                 <label>
-                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = false" value="Customer">
+                                    <input type="radio" ng-model="user.role" ng-change="adminSelected = false" value="Customer">
                                     Customer
                                 </label>
                                 <label>
-                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = true" value="Admin">
+                                    <input type="radio" ng-model="user.role" ng-change="adminSelected = true" value="Admin">
                                     Admin
                                 </label>
                             </li>

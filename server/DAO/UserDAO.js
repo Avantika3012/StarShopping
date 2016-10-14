@@ -7,8 +7,7 @@ var register = function (data, callback) {
   })
 }
 
-var login = function (data, callback) {
-  console.log(data);
+var login = function (data, callback) {  
   UserModel.find(data, function (err, user) {
     if (err) return callback(err)
     callback(null, user)
