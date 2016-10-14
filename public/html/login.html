@@ -1,7 +1,7 @@
 <div id="login-form">
 
-        <input type="radio" checked id="login" name="switch" class="hide">
-        <input type="radio" id="signup" name="switch" class="hide">
+        <input type="radio" ng-model="SelectedForm.type" checked id="login" name="switch" class="hide" value="Login">
+        <input type="radio" ng-model="SelectedForm.type" id="signup" name="switch" class="hide" value="Register">
 
         <div>
             <ul class="form-header">
@@ -16,7 +16,17 @@
                     <form action="">
                         <ul class="ul-list">
                             <li><input type="text" ng-model="user.username" required class="input" placeholder="Username" /><span class="icon"><i class="fa fa-user"></i></span></li>
-                            <li><input type="text" ng-model="user.password" required class="input" placeholder="Password" /><span class="icon"><i class="fa fa-lock"></i></span></li>                            
+                            <li><input type="text" ng-model="user.password" required class="input" placeholder="Password" /><span class="icon"><i class="fa fa-lock"></i></span></li>
+                             <li>
+                                <label>
+                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = false" value="Customer">
+                                    Customer
+                                </label>
+                                <label>
+                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = true" value="Admin">
+                                    Admin
+                                </label>
+                            </li>                            
                             <li><input type="button" ng-click="login()" value="SIGN IN" class="btn"></li>
                         </ul>
                     </form>
@@ -29,15 +39,15 @@
                         <ul class="ul-list">
                             <li><input type="text" ng-model="user.usernameForRegister"  required class="input" placeholder="Username" /><span class="icon"><i class="fa fa-user"></i></span></li>
                             <li><input type="text" ng-model="user.passwordForRegister" required class="input" placeholder="Password" /><span class="icon"><i class="fa fa-lock"></i></span></li>
-                            <li ng-if="adminSelected == true"><input type="text" ng-model="user.companyNameForRegister" required class="input" placeholder="Company Name" /><span class="icon"><i class="glyphicon glyphicon-asterisk"></i></span></li>
+                            <li ng-if="adminSelected == true && SelectedForm.type === 'Register'"><input type="text" ng-model="user.companyNameForRegister" required class="input" placeholder="Company Name" /><span class="icon"><i class="glyphicon glyphicon-asterisk"></i></span></li>
                             <!--<li><input type="checkbox" id="check1"> <label for="check1">I accept terms and conditions</label></li>-->
                             <li>
                                 <label>
-                                    <input type="radio" ng-model="color.name" ng-change="adminSelected = false" value="Customer">
+                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = false" value="Customer">
                                     Customer
                                 </label>
                                 <label>
-                                    <input type="radio" ng-model="color.name" ng-change="adminSelected = true" value="Admin">
+                                    <input type="radio" ng-model="UserRole.role" ng-change="adminSelected = true" value="Admin">
                                     Admin
                                 </label>
                             </li>

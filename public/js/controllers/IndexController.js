@@ -1,3 +1,5 @@
-app.controller('IndexController', function ($scope) {
-  console.log('Index Loaded');
-});
+app.controller('IndexController', ['$scope','$location',function ($scope, $location) {
+  $scope.logout = function() {
+    $location.path('/');
+  }
+}]);

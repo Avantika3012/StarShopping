@@ -1,0 +1,84 @@
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend align="center"> ADD NEW PRODUCT</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>
+            <div class="col-md-4">
+                <input id="product_name" ng-model="product.productName" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_name_fr">PRODUCT DESCRIPTION</label>
+            <div class="col-md-4">
+                <input id="product_name_fr" ng-model="product.description" name="product_name_fr" placeholder="PRODUCT DESCRIPTION" class="form-control input-md" required=""
+                    type="text">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="available_quantity">PRODUCT PRICE</label>
+            <div class="col-md-4">
+                <input id="product_price" ng-model="product.price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md" required="" type="number">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>
+            <div class="col-md-4">
+                <input id="available_quantity" ng-model="product.quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required=""
+                    type="number">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>
+            <div class="col-md-4">
+                <input id="percentage_discount" ng-model="product.discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md"
+                    required="" type="number">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <div class="col-md-4 " for="approuved_by"></div>
+            <div class="col-md-4">
+
+                <!-- File Button -->
+                <!--<div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">main_image</label>
+                    <div class="col-md-4">
+                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>-->
+                <!-- File Button -->
+                <!--<div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">auxiliary_images</label>
+                    <div class="col-md-4">
+                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>-->
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <button id="singlebutton" ng-click="saveProduct()" name="singlebutton" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+    </fieldset>
+</form>

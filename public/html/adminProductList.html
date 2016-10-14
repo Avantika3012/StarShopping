@@ -1,0 +1,34 @@
+<div class="container">
+    <!-- Form Name -->
+    <legend align="center"> PRODUCTS LIST </legend>
+       
+    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Avl. Qty</th>
+                <th>Discount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in products">
+                <td ng-click="alert('product')" ng-bind="product.productName"></td>
+                <td ng-bind="product.description"></td>
+                <td ng-bind="product.price"></td>
+                <td ng-bind="product.quantity"></td>
+                <td ng-bind="product.discount"></td>
+                <td>
+                    
+                    <!--<span ng-click="view('product')" class="glyphicon glyphicon-eye-open" style="cursor:pointer;" title="View"></span> &nbsp;-->
+                    <span ng-click="edit('product')" class="glyphicon glyphicon-edit" style="cursor:pointer;" title="Edit"></span>&nbsp;
+                    <span ng-click="delete(product)" class="glyphicon glyphicon-trash" style="cursor:pointer;" title="Delete"></span>
+                </td>
+
+            </tr>            
+        </tbody>
+    </table>
+</div>

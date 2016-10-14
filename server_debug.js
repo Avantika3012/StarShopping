@@ -5,6 +5,7 @@
   var bodyParser = require('body-parser')
   var logger = require('morgan')
   var user = require('./server/routes/user')
+  var product = require('./server/routes/product')
   global._baseDirectory  = __dirname + "/";
   app.use(logger('dev'))
   // var mongoose = require('mongoose')
@@ -32,6 +33,7 @@
 
   //Routers
   app.use('/user', user)
+  app.use('/product', product)
 
   //Creating database connection
   var mongoose   = require('mongoose');
