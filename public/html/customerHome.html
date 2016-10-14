@@ -16,9 +16,10 @@
                         <del>{{product.price}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
 
                     <div ng-if="product.discount > 0" class="discount"> {{product.discount}} % OFF</div>
-                    <div class="price" ng-if="product.discount != 0"> {{product.price - (product.price * product.discount) / 100}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
+                    <div class="price" ng-if="product.discount != 0"> {{product.discountPrice}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
 
                     <div> Available Quantity : {{product.quantity}}</div>
+                    <div> Product By : {{product.companyName}}</div>
 
                     <div class="buy-button" ng-click="buy(product)"> <i class="glyphicon glyphicon-ok" style="font-size:15px"> </i> BUY </div>
                     <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div>

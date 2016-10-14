@@ -5,7 +5,18 @@ var saveProduct = function (data, callback) {
 }
 
 var getProducts = function (data, callback) {
-  ProductDAO.getProducts(data, callback)
+  ProductDAO.getProducts(data, function (err, products) {
+    if (err) return callback(err)
+    products.map(function (product) {
+      if (product._doc.discount > 0) {
+        product._doc.discountPrice = (product._doc.price - ((product._doc.price * product._doc.discount) / 100))
+        return product
+      } else {
+        return product
+      }
+    })
+    callback(null, products)
+  })
 }
 
 var deleteProduct = function (data, callback) {

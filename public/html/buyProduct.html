@@ -19,7 +19,7 @@
                     <div class="price" ng-if="product.discount != 0"> {{product.price - (product.price * product.discount) / 100}} <i class="fa fa-rupee" style="font-size:30px"></i></div>
                     <div> Available Quantity : {{product.quantity}}</div>
                     <div> By : XYZ</div>
-                    
+
                 </li>
 
             </ul>
@@ -29,15 +29,21 @@
             <ul>
                 <li>
                     <h3> Order Summary </h3>
-                    <div>Enter Quantity: <input ng-model="product.enteredQuantity"  placeholder="Quantity" class="form-control input-md" required="" type="number"></div> <br>
-                    Item price : <span ng-if="product.discount > 0">{{product.price - (product.price * product.discount) / 100}}</span>
-                    <span ng-if="product.discount == 0">{{product.price}}</span>
-                    
-                    <!--Total Price : {{product.enteredQuantity * 1}}-->
+                    <div>Enter Quantity: <input ng-model="product.enteredQuantity" ng-change="validateQuatity()" placeholder="Quantity"
+                            class="form-control input-md" required="" type="number"></div> <br> Item price : <span ng-if="product.discount > 0">{{product.price - (product.price * product.discount) / 100}}</span>
+                    <span ng-if="product.discount == 0">{{product.price}}</span> <br>
+
+                    <span ng-if="product.discountPrice && product.discountPrice > 0">
+                    Total Price : {{(product.enteredQuantity * (product.discountPrice)) || 0 }}
+                    </span>
+
+                    <span ng-if="!product.discountPrice">
+                    Total Price : {{(product.enteredQuantity * (product.price)) || 0 }}
+                    </span>
 
                     <div class="buy-button" ng-click="buy(product)"> <i class="glyphicon glyphicon-ok" style="font-size:15px"> </i> BUY </div>
-                    <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div> 
-                    
+                    <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div>
+
                 </li>
 
             </ul>
