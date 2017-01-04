@@ -3,11 +3,13 @@ app.controller('AdminProductListController', [
   'AdminService',
   'toastr',
   'DataService',
+  '$location',
   function (
     $scope,
     AdminService,
     toastr,
-    DataService) {
+    DataService,
+    $location) {
     $scope.products = []
     $scope.product = {}
     AdminService.getProducts($scope.product).then(function (response) {
@@ -21,6 +23,6 @@ app.controller('AdminProductListController', [
     }
     $scope.editProduct = function (product) {
       DataService.setProduct(product)
-      $location.path('/adminHomeList')
+      $location.path('/adminNewProduct')
     }
   }])

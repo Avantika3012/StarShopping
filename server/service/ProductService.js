@@ -1,7 +1,11 @@
 var ProductDAO = require('../DAO/ProductDAO')
 
 var saveProduct = function (data, callback) {
-  ProductDAO.saveProduct(data, callback)
+  if (data.isEdit) {
+    ProductDAO.updateProduct(data, callback)
+  } else {
+    ProductDAO.saveProduct(data, callback)
+  }
 }
 
 var getProducts = function (data, callback) {
