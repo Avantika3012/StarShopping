@@ -1,3 +1,4 @@
+var mongoose = require('mongoose')
 var ProductModel = require('../models/Product')
 var saveProduct = function (data, callback) {
   var product = new ProductModel(data)
@@ -9,6 +10,7 @@ var saveProduct = function (data, callback) {
 
 var updateProduct = function (data, callback) {
   var product = new ProductModel(data)
+
   ProductModel.update({_id: data._id}, product, function (err, numAffected) {
     if (err) return callback(err)
     callback(null, 'Product updated successfully!')

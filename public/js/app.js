@@ -21,6 +21,10 @@ var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule', 'toastr']
         templateUrl: 'html/customerHome.html',
         controller: 'CustomerHomeController'
       })
+      .when('/customersCart', {
+        templateUrl: 'html/customersCart.html',
+        controller: 'CustomersCartController'
+      })
       .when('/buyProduct', {
         templateUrl: 'html/buyProduct.html',
         controller: 'BuyProductController',

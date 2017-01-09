@@ -30,6 +30,7 @@ if (cluster.isMaster) {
   var logger = require('morgan')
   var user = require('./server/routes/user')
   var product = require('./server/routes/product')
+  var cart = require('./server/routes/cart')
   global._baseDirectory = __dirname + '/'
   app.use(logger('dev'))
   // var mongoose = require('mongoose')
@@ -58,6 +59,7 @@ if (cluster.isMaster) {
   // Routers
   app.use('/user', user)
   app.use('/product', product)
+  app.use('/cart', cart)
 
   // Creating database connection
   var mongoose = require('mongoose')

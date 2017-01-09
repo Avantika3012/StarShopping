@@ -34,6 +34,7 @@
     <script src="js/controllers/AdminProductController.js"></script>
     <script src="js/controllers/CustomerHomeController.js"></script>
     <script src="js/controllers/BuyProductController.js"></script>
+    <script src="js/controllers/CustomersCartController.js"></script>    
 
     <!--Services-->
     <script src="js/services/LoginService.js"></script>
@@ -53,6 +54,7 @@
                 <a class="navbar-brand" href="" style="color:white">STAR Shopping</a>
             </div>
             <ul class="nav navbar-nav">
+                <li ng-if="getUserRole() == 'Customer'"><a href="/#!/customerHome" style="color:white">Home</a></li>
                 <li class="dropdown" ng-if="loggedIn && getUserRole() == 'Admin'">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="" style="color:white"><b>Product</b>
         <span class="caret"></span></a>
@@ -61,11 +63,11 @@
                         <li><a href="/#!/adminHomeList">Product List</a></li>
                     </ul>
                 </li>
-                <!--<li><a href="">Page 2</a></li>
-            <li><a href="">Page 3</a></li>-->
+                
+            <!--<li><a href="">Page 3</a></li>-->
             </ul>
             <div class="nav navbar-nav navbar-right">
-                <i ng-if="loggedIn && getUserRole() == 'Customer'" class="navbar-brand glyphicon glyphicon-shopping-cart" style="font-size:15px"></i>
+                <a href="/#!/customersCart" ng-if="loggedIn && getUserRole() == 'Customer'" class="navbar-brand"><strong style="color:white"><span class="glyphicon glyphicon-shopping-cart"></strong></a>                
                 <a href="" ng-if="loggedIn === true" class="navbar-brand" ng-click="logout()"><strong style="color:white"><span class="glyphicon glyphicon-off"></strong></a>
             </div>
         </div>

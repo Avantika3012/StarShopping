@@ -3,8 +3,12 @@ app.controller('CustomerHomeController', ['$scope', 'CustomerService', '$locatio
   CustomerService.getProducts().then(function (response) {
     $scope.products = response.data
   })
-  $scope.buy = function (product) {    
-    DataService.setProduct(product);
+  $scope.buy = function (product) {
+    DataService.setProduct(product)
     $location.path('/buyProduct', {productName: product.productName})
+  }
+
+  $scope.addToCart = function () {
+    
   }
 }])

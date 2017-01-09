@@ -22,12 +22,12 @@
                     <div> Product By : {{product.companyName}}</div>
 
                     <div class="buy-button" ng-click="buy(product)"> <i class="glyphicon glyphicon-ok" style="font-size:15px"> </i> BUY </div>
-                    <div class="buy-button cart-button"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div>
+                    <div class="buy-button cart-button" ng-click="addToCart(product)"> <i class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></i> Add To Cart</div>
                 </li>
 
             </ul>
 
-            <ul ng-if="products.length == 0">Reocrds not found, please enter your product by admin user!</ul>
+            <ul ng-show="products.length == 0">Reocrds not found, please enter your product by admin user!</ul>
         </div>
     </div>
 </div>
