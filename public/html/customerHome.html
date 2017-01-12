@@ -9,6 +9,7 @@
             <ul>                
                 <li ng-repeat="product in products">
                     <h3 ng-bind="product.productName"> </h3>
+                    <img src="uploads/{{product.imgName}}" height="100" width="250"/>
                     Description: <br>
                     <span class="description" ng-bind="product.description"></span>
                     <div class="price" ng-if="product.discount == 0"> {{product.price}} <i class="fa fa-rupee" style="font-size:30px"></i></div>

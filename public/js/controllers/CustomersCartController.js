@@ -1,12 +1,15 @@
 app.controller('CustomersCartController', [
   '$scope',
-  'AdminService',
+  'CustomerService',
   'toastr',
   'DataService',
   function (
     $scope,
-    AdminService,
+    CustomerService,
     toastr,
     DataService) {
-      console.log('Play')
-    }])
+    CustomerService.getCartDetails().then(function (response) {
+      $scope.cartDetails = response.data
+    }, function () {})
+    console.log('Play')
+  }])

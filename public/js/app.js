@@ -1,4 +1,4 @@
-var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule', 'toastr'])
+var app = angular.module('MeanApp' , ['ngRoute', 'LocalStorageModule', 'toastr', 'ngFileUpload'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

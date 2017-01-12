@@ -1,5 +1,19 @@
 <div class="container">
     <div class="row">
-        Customers Cart
+        Customers Cart  
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Pruduct</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="product in cartDetails.products">
+                    <td data-ng-bind="product.productName"></td>
+                    <td data-ng-bind="product.price"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

@@ -24,6 +24,7 @@ if (cluster.isMaster) {
 
   // Include Express
   var express = require('express')
+  // var fileUpload = require('express-fileupload')
   // Create a new Express application
   var app = express()
   var bodyParser = require('body-parser')
@@ -44,6 +45,9 @@ if (cluster.isMaster) {
   // use static files in ROOT/public folder
   app.use(express.static(__dirname + '/public'))
 
+  // file upload
+  // app.use(fileUpload())
+  
   app.use(function (err, req, res, next) {
     res.status(err.status || 500)
     console.log('ERROR')
@@ -54,7 +58,7 @@ if (cluster.isMaster) {
   // })
   })
 
-
+  global.basePath  = __dirname;
 
   // Routers
   app.use('/user', user)

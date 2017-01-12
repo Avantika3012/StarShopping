@@ -1,6 +1,32 @@
-<form class="form-horizontal">
-    <fieldset>
+<!--<h1>Angular Node File Upload</h1>
+<form name="upload_form">
+    Single Image with validations
+    <input type="file" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" />    Image thumbnail: <img style="width:100px;" ng-show="!!file" ngf-thumbnail="file || '/thumb.jpg'" />
+    <i ng-show="upload_form.file.$error.required">*required</i><br>
+    <i ng-show="upload_form.file.$error.maxSize">File too large 
+            {{file.size / 1000000|number:1}}MB: max 20M</i>
+      Multiple files
+            <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+            Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div> 
+    <button type="submit" ng-click="submit()">submit</button>
+    <p>{{up.progress}}</p>
+</form>-->
 
+
+<!--<form ref='uploadForm' id='uploadForm' action='product/imgUpload' method='post' encType="multipart/form-data">
+    <input type="file" name="sampleFile" id="sampleFile" data-ng-model="imgFile" />
+    <input type='submit' value='Upload!' />
+</form>-->
+
+<!--
+<form method="POST" name="myForm" action="product/imgUpload" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" name="Submit" value="Submit">
+</form>
+-->
+
+<form class="form-horizontal" name="productForm" enctype="multipart/form-data" data-ng-submit="saveProduct(productForm)">
+    <fieldset>
         <!-- Form Name -->
         <legend align="center"> ADD NEW PRODUCT</legend>
 
@@ -8,8 +34,32 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>
             <div class="col-md-4">
-                <input id="product_name" ng-model="product.productName" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+                <input id="product_name" ng-model="product.productName" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md"
+                    required="" type="text">
 
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <!--Single Image with validations
+            <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB"
+                ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Select</div>
+            <div class="button" ngf-select="upload($file)">Upload on file select</div>-->
+            <label class="col-md-4 control-label" for="product_img">PRODUCT NAME</label>
+            <div class="col-md-4">
+                <form id="myForm" name="fileForm" enctype="multipart/form-data" data-ng-submit="submit()">
+                    <input type="file" ngf-select ng-model="file" name="file" id="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"
+                    /> Image thumbnail: <img style="width:100px;" ng-show="!!file" ngf-thumbnail="file || '/thumb.jpg'"
+                    />
+                    <i ng-show="upload_form.file.$error.required">*required</i><br>
+                    <i ng-show="upload_form.file.$error.maxSize">File too large 
+            {{file.size / 1000000|number:1}}MB: max 20M</i>
+                    <!--  Multiple files
+            <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+            Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div> -->
+                    <p>{{up.progress}}</p>
+                </form>
             </div>
         </div>
 
@@ -17,8 +67,8 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="product_name_fr">PRODUCT DESCRIPTION</label>
             <div class="col-md-4">
-                <input id="product_name_fr" ng-model="product.description" name="product_name_fr" placeholder="PRODUCT DESCRIPTION" class="form-control input-md" required=""
-                    type="text">
+                <input id="product_name_fr" ng-model="product.description" name="product_name_fr" placeholder="PRODUCT DESCRIPTION" class="form-control input-md"
+                    required="" type="text">
 
             </div>
         </div>
@@ -27,7 +77,8 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="available_quantity">PRODUCT PRICE</label>
             <div class="col-md-4">
-                <input id="product_price" ng-model="product.price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md" required="" type="number">
+                <input id="product_price" ng-model="product.price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md"
+                    required="" type="number">
 
             </div>
         </div>
@@ -36,8 +87,8 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>
             <div class="col-md-4">
-                <input id="available_quantity" ng-model="product.quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required=""
-                    type="number">
+                <input id="available_quantity" ng-model="product.quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md"
+                    required="" type="number">
 
             </div>
         </div>
@@ -46,8 +97,8 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>
             <div class="col-md-4">
-                <input id="percentage_discount" ng-model="product.discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md"
-                    required="" type="number">
+                <input id="percentage_discount" ng-model="product.discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT"
+                    class="form-control input-md" required="" type="number">
 
             </div>
         </div>
@@ -76,7 +127,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <button id="singlebutton" ng-click="saveProduct()" name="singlebutton" class="btn btn-primary">Save</button>
+                        <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">Save</button>
                     </div>
                 </div>
 

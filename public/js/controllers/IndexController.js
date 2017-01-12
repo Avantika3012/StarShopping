@@ -1,6 +1,6 @@
 app.controller('IndexController', ['$scope', '$location', 'localStorageService', function ($scope, $location, localStorageService) {
   $scope.getUserRole = function () {
-    return localStorageService.get('User').role
+    return localStorageService.get('User') ? localStorageService.get('User').role: undefined
   }
   if (localStorageService.get('User')) {
     $scope.loggedIn = true
